@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script>
+        const nombre1 = [
+            "Lukas", "Sophie", "Maximilian", "Maria", "Leon", "Emilia", "Paul", "Lena", "Ben", "Mia",
+            "Finn", "Hannah", "Elias", "Anna", "Jonas", "Mila", "Luca", "Laura", "Felix", "Lina",
+            "Julian", "Emma", "Jakob", "Lea", "Moritz", "Clara", "Tim", "Paula", "Oskar", "Sarah",
+            "Niklas", "Johanna", "Matteo", "Lara", "David", "Sophia", "Simon", "Marie", "Tom", "Amelie",
+            "Anton", "Jana", "Alexander", "Charlotte", "Philipp", "Leona", "Jonah", "Maja", "Erik", "Ella",
+            "Jan", "Victoria", "Noah", "Emily", "Fabian", "Julia", "Nicolas", "Zoe", "Daniel", "Johanna",
+            "Janne", "Nele", "Lennard", "Katharina", "Markus", "Pauline", "Emil", "Alina", "Hannes", "Milena",
+            "Florian", "Leona", "Matthias", "Anna-Lena", "Christian", "Sophie", "Tobias", "Marlene", "Jonathan", "Anja",
+            "Timo", "Jasmin", "Dominik", "Lisa", "Benedikt", "Celine", "Nils", "Laura", "Marlon", "Selina",
+            "Vincent", "Marlene", "Bastian", "Lena", "David", "Marie", "Malte", "Elena", "Alexander", "Nina",
+            "Samuel", "Paulina", "Pascal", "Carolin", "Valentin", "Lea", "Luis", "Hannah", "Tom", "Lisa",
+            "Jannis", "Lea", "Fabio", "Paula", "Fabian", "Anika", "Robert", "Natalie", "Lennart", "Annika",
+            "Finn", "Luisa", "Marvin", "Vanessa", "Johannes", "Larissa", "Patrick", "Lara", "Kevin", "Anne",
+            "Paul", "Lea", "Niclas", "Luisa", "Michael", "Sophie", "Andreas", "Lena", "Sebastian", "Jennifer",
+            "Marius", "Michelle", "Tom", "Julia", "Till", "Hanna", "Martin", "Juliane", "Kai", "Julia",
+            "Jan", "Franziska", "Peter", "Theresa", "Jörg", "Leonie", "Nico", "Vanessa", "Matthias", "Lena",
+            "Christian", "Katja", "Jens", "Anja", "Klaus", "Sabrina", "Manuel", "Linda", "Oliver", "Sandra",
+            "Sven", "Christina", "Stefan", "Kathrin", "Tobias", "Franziska", "Uwe", "Verena", "Wolfgang", "Nicole"
+        ];
+
+        const nombre2 = [
+            "Thabo", "Lebohang", "Khanya", "Sipho", "Naledi", "Mandla", "Lerato", "Lungile", "Bontle", "Kagiso",
+            "Nomvula", "Mpho", "Sibusiso", "Refiloe", "Kabelo", "Amahle", "Onke", "Thandiwe", "Simphiwe", "Siyabonga",
+            "Anele", "Noluthando", "Nkosinathi", "Zanele", "Lethabo", "Thandeka", "Katlego", "Kgothatso", "Lethabo", "Ntombi",
+            "Themba", "Mapule", "Keabetswe", "Banele", "Mosa", "Gugulethu", "Ayanda", "Sizwe", "Hlompho", "Buhle",
+            "Thulani", "Nokwanda", "Thabiso", "Palesa", "Xolani", "Nandi", "Vuyo", "Mmabatho", "Oupa", "Thokozani",
+            "Zandile", "Mokgadi", "Mohau", "Njabulo", "Nonhlanhla", "Sindiswa", "Fumani", "Lehlohonolo", "Tumelo", "Tshepo",
+            "Lehasa", "Kgotso", "Mphoentle", "Motlatsi", "Gontse", "Thabo", "Ntsika", "Zinhle", "Bafana", "Malebo",
+            "Nobuhle", "Modiehi", "Kopano", "Lebogang", "Mthunzi", "Nokulunga", "Leleti", "Lindiwe", "Mokete", "Motheo",
+            "Mosima", "Nhlanhla", "Puseletso", "Samkelo", "Sithembiso", "Tshiamo", "Vangile", "Wandile", "Zenande", "Zuko",
+            "Kamogelo", "Lesedi", "Otsile", "Segomotso", "Tshegofatso", "Thuso", "Unity", "Yonela", "Zakithi", "Zolani", "Amunet", "Osiris", "Nefertari", "Ramsés", "Cleopatra", "Khufu", "Hatshepsut", "Thutmose", "Nefertiti", "Anubis",
+            "Akhenaten", "Isis", "Seti", "Sekhmet", "Amenhotep", "Sobek", "Bastet", "Ptah", "Khafre", "Horus",
+            "Imhotep", "Maat", "Tutankamón", "Neferhotep", "Mut", "Khepri", "Sphinx", "Nekhbet", "Khonsu", "Bak",
+            "Menes", "Buto", "Shai", "Babi", "Hathor", "Wadjet", "Neith", "Seth", "Khenti-Amentiu", "Taweret",
+            "Karnak", "Mutnofret", "Nakht", "Iput", "Sekhemib", "Meret", "Anqet", "Khnum", "Ahmose", "Seneferu",
+            "Tefnut", "Shu", "Neferu", "Seshat", "Geb", "Nut", "Aahotep", "Neferure", "Sati", "Tiy",
+            "Renenutet", "Keket", "Shesmu", "Apep", "Hapi", "Ihy", "Khensit", "Merit", "Ninurtu", "Tayuun",
+            "Amsi", "Ghada", "Khefri", "Mehet", "Thoyet", "Khensit", "Taweret", "Meretseger", "Nub", "Tasenetnofret",
+            "Inka", "Afra", "Asim", "Hapi", "Mehen", "Ra", "Aten", "Knumu", "Kara", "Wahibre",
+            "Rennefer", "Rat", "Nebet", "Meri", "Hotep", "Eset", "Inheret", "Geb", "Horus", "Auset",
+            "Atemu", "Kep", "Shentayet", "Ptahhotep", "Nekhebet", "Kauket", "Baset", "Yuya", "Tiye", "Thuya"
+        ];
+
+        const apellido1 = [
+            "González", "Rodríguez", "García", "Martínez", "Hernández", "López", "Sánchez", "Pérez", "Gómez", "Ramírez",
+            "Flores", "Díaz", "Torres", "Rivera", "Chávez", "Juárez", "Romero", "Vázquez", "Ruíz", "Mendoza",
+            "Castillo", "Gutiérrez", "Reyes", "Santiago", "Fernández", "Jiménez", "Aguilar", "Ortiz", "Cruz", "Ramos",
+            "Morales", "Álvarez", "Flores", "Castro", "Silva", "Cortés", "Vargas", "Guerrero", "Ávila", "Valencia",
+            "Acosta", "Montes", "Chavez", "Rosas", "Valdez", "Andrade", "Esquivel", "Zamora", "Nava", "Herrera",
+            "Cervantes", "Salazar", "Rojas", "Pacheco", "Padilla", "León", "Salinas", "Campos", "Quiroz", "Sepúlveda",
+            "Mejía", "Navarro", "Contreras", "Cabrera", "Valenzuela", "Gallegos", "Ibarra", "Santos", "Olvera", "Sosa",
+            "Miranda", "Corona", "Lara", "Escobar", "Luna", "Serrano", "Castañeda", "Montoya", "Guzmán", "Peralta",
+            "Beltrán", "Peña", "Arellano", "Figueroa", "Treviño", "Salgado", "Uribe", "Ponce", "Galindo", "Cárdenas",
+            "Macías", "Delgado", "Bautista", "Aguirre", "Barajas", "Escamilla", "Sandoval", "Amaya", "Orozco", "Jaime",
+            "Paredes", "Zúñiga", "Bravo", "Barrios", "Téllez", "Maldonado", "Navarrete", "Espinoza", "Vega", "Monroy",
+            "Avilés", "Miramontes", "Cano", "Correa", "Solís", "Patiño", "Estrada", "Carmona", "Palacios", "Castañón",
+            "Fuentes", "Baez", "Amador", "Alonso", "Escobedo", "Duran", "Quintero", "Segura", "Calderón", "Arroyo",
+            "Leyva", "Lugo", "Godínez", "Becerra", "Alvarado", "Barrera", "Arenas", "Soria", "Barajas", "Miranda",
+            "Franco", "Quiróz", "Salas", "Gallardo", "Valenzuela", "Segovia", "Patiño", "Villarreal", "Santillán", "Trujillo",
+            "Villanueva", "Osorio", "Aldaco", "Pantoja", "De La Cruz", "Mata", "Madrigal", "Belmonte", "Gavilán", "Montalvo",
+            "Báez", "Ortega", "Olivares", "Chavarría", "Bernal", "Solano", "Salazar", "Venegas", "Leal", "Aguayo",
+            "Coronado", "Montiel", "Escalante", "Ortíz", "Amezcua", "Grijalva", "Carranza", "Rebollar", "Plascencia", "Aranda"
+        ];
+        const apellido2 = [
+            "Rossi", "Russo", "Ferrari", "Esposito", "Bianchi", "Romano", "Colombo", "Ricci", "Marino", "Greco",
+            "Conti", "Bruno", "Moretti", "Barbieri", "Fontana", "Santoro", "Mariani", "Rizzo", "Lombardi", "Morelli",
+            "Baldi", "Caruso", "Galli", "Martinelli", "Messina", "Serra", "Ferrara", "Sala", "Ferraro", "Leone",
+            "Rinaldi", "Gallo", "Martini", "Vitale", "Pagano", "Gatti", "Pellegrini", "Palumbo", "Neri", "Longo",
+            "Caputo", "De Luca", "Costa", "Giordano", "Riva", "Fiore", "De Rosa", "Ferri", "Parisi", "Benedetti",
+            "Monti", "Cattaneo", "D'amico", "Orlando", "Silvestri", "Marchetti", "Rizzi", "Palmieri", "Bernardi", "Marini",
+            "Fabbri", "Longo", "Martino", "Galli", "Sorrentino", "Amato", "Colombo", "De Santis", "Coppola", "Farina",
+            "Bellini", "Gentile", "Leone", "Grasso", "Valenti", "Carbone", "Parisi", "Bianco", "De Angelis", "Mancini",
+            "Sala", "Conte", "Ferraro", "De Rosa", "Costantini", "Ricci", "Giuliani", "Pellegrino", "Piras", "De Angelis",
+            "Basile", "Testa", "Grassi", "Ferretti", "D'angelo", "Poli", "Carbone", "De Luca", "Giannini", "Riva",
+            "Pellegrini", "Bianchi", "Grassi", "Marini", "Palumbo", "Santoro", "Mazza", "Negri", "Gallo", "Vitale",
+            "Caruso", "Parisi", "Ruggiero", "Ferrara", "Sanna", "De Santis", "Silvestri", "Pagano", "Mariani", "Grasso",
+            "Conti", "Villa", "Ferri", "Cattaneo", "De Rosa", "D'amico", "Morelli", "Serra", "Colombo", "Lombardi",
+            "Bianco", "Monti", "Giordano", "Rinaldi", "Sorrentino", "Costa", "Orlando", "D'angelo", "De Luca", "Piras",
+            "Benedetti", "Martino", "Moretti", "Bellini", "Bernardi", "Carbone", "Barbieri", "Palmieri", "D'amico", "D'angelo",
+            "Martini", "Marino", "Baldi", "Fabbri", "Mancini", "Rizzi", "Farina", "Rizzo", "Coppola", "Sala",
+            "Riva", "Gatti", "Marchetti", "Basile", "Parisi", "Negri", "Valenti", "Ferretti", "Poli", "Gentile",
+            "Amato", "Testa", "Giuliani", "Leone", "Longo", "Pellegrino", "Ferraro", "Santoro", "Grassi", "De Santis",
+            "Conte", "Piras", "Silvestri", "Mazza", "Pellegrini", "Sanna", "Caruso", "Pagano", "De Angelis", "Sorrentino"
+        ];
+        function generar() {
+            var num = parseInt(document.getElementById("num").value);
+            if (num < 1) { num = 5; document.getElementById("num").value = 5; }
+            alumnos = "CREATE DATABASE IF NOT EXISTS universidad;<br>" +
+                "USE universidad;<br>" +
+                "CREATE TABLE IF NOT EXISTS alumnos(<br>" +
+                "&emsp;alumno_matricula INT UNSIGNED NOT NULL UNIQUE, <br>" +
+                "&emsp;alumno_ap1 VARCHAR(255) NOT NULL, <br>" +
+                "&emsp;alumno_ap2 VARCHAR(255), <br>" +
+                "&emsp;alumno_nombres VARCHAR(255) NOT NULL, <br>" +
+                "&emsp;alumno_correo VARCHAR(255) NOT NULL UNIQUE<br>" +
+                ");<br>" +
+                "DELETE FROM alumnos;<br>" +
+                "INSERT INTO alumnos(alumno_matricula, alumno_ap1, alumno_ap2, alumno_nombres, alumno_correo) VALUES<br>", matricula = 222206011;
+            for (let i = 1; i < (num + 1); i++) {
+                alumnos += "&emsp;(" + (matricula) + ", '" + (apellido1[Math.floor(Math.random() * 150) + 1]) + "', '" + (apellido2[Math.floor(Math.random() * 150) + 1]) + "', '" + (nombre1[Math.floor(Math.random() * 150) + 1]) + " " + (nombre2[Math.floor(Math.random() * 150) + 1]) + "', '" + (matricula++) + "@universidad.mx" + "')";
+                if (i == num) {
+                    alumnos += ";";
+                } else {
+                    alumnos += ",<br>";
+                }
+            }
+            document.getElementById("salida").innerHTML = alumnos;
+        }
+
+        function generarSQL() {
+            var archivo = document.createElement('a');
+            var salida = alumnos.replace(/<br>/g, '\n').replace(/&emsp;/g, '\t').trim();
+            archivo.setAttribute('href', 'data:text/plane;charset=utf-8,' + encodeURIComponent(salida));
+            archivo.setAttribute('download', "universidad.sql");
+            archivo.style.display = 'none';
+            document.body.appendChild(archivo);
+            archivo.click();
+            document.body.removeChild(archivo);
+        }
+
+    </script>
+</head>
+
+<body>
+    <input type="button" value="Generar alumnos" onclick="generar()">
+    <input type="button" value="Generar SQL" onclick="generarSQL()">
+    <input type="number" id="num" placeholder="Numero de entradas" value="5">
+    <p id="salida"></p>
+</body>
+
+</html>
